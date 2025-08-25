@@ -1,0 +1,36 @@
+#! /c/Source/iverilog-install/bin/vvp
+:ivl_version "12.0 (devel)" "(s20150603-1539-g2693dd32b)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 12;
+:vpi_module "C:\iverilog\lib\ivl\system.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_sys.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_textio.vpi";
+:vpi_module "C:\iverilog\lib\ivl\v2005_math.vpi";
+:vpi_module "C:\iverilog\lib\ivl\va_math.vpi";
+:vpi_module "C:\iverilog\lib\ivl\v2009.vpi";
+S_00000202b1a724d0 .scope package, "$unit" "$unit" 2 1;
+ .timescale 0 0;
+S_00000202b1a72660 .scope module, "IMem" "IMem" 3 2;
+ .timescale -9 -12;
+    .port_info 0 /INPUT 32 "addr";
+    .port_info 1 /OUTPUT 32 "instr";
+L_00000202b19ee7e0 .functor BUFZ 32, L_00000202b19ee6a0, C4<00000000000000000000000000000000>, C4<00000000000000000000000000000000>, C4<00000000000000000000000000000000>;
+v00000202b1a72ca0_0 .net *"_ivl_0", 31 0, L_00000202b19ee6a0;  1 drivers
+v00000202b1a727f0_0 .net *"_ivl_3", 29 0, L_00000202b19ee740;  1 drivers
+o00000202b1aa7038 .functor BUFZ 32, C4<zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz>; HiZ drive
+v00000202b1a72890_0 .net "addr", 31 0, o00000202b1aa7038;  0 drivers
+v00000202b19ee560_0 .net "instr", 31 0, L_00000202b19ee7e0;  1 drivers
+v00000202b19ee600 .array "mem", 255 0, 31 0;
+L_00000202b19ee6a0 .array/port v00000202b19ee600, L_00000202b19ee740;
+L_00000202b19ee740 .part o00000202b1aa7038, 2, 30;
+    .scope S_00000202b1a72660;
+T_0 ;
+    %vpi_call/w 3 9 "$readmemh", "imem.hex", v00000202b19ee600 {0 0 0};
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "-";
+    ".\src\imem.v";
