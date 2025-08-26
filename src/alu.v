@@ -1,5 +1,5 @@
 `timescale 1ns/1ps
-module alu(
+module ALU(  // Mudei de 'alu' para 'ALU' para corresponder à instância
     input  [31:0] A,
     input  [31:0] B,
     input  [2:0]  ALUCtrl,      // 0:ADD, 1:SUB, 2:XOR, 3:SLL, 4:BNE
